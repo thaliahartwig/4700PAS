@@ -32,7 +32,7 @@ for i = 1:10
     [x,y,xc,yc,nx,ny,eps,edges] = waveguidemesh([n1,n2,n3],[h1,h2,h3], ...
                                             rh,rw(i),side,dx,dy); 
 
-    [Hx,Hy,neff(i)] = wgmodes(lambda,n2,k,dx,dy,eps,'000A');
+    [Hx,Hy,neff(i)] = wgmodes(lambda,n2,nmodes,dx,dy,eps,'000A');
     
     fprintf(1,'neff = %.6f\n',neff(i));
     
@@ -51,7 +51,7 @@ for i = 1:10
     
 end
 
-figure(11);
+figure(12);
 plot(rw,neff);
 grid on;
 title('neff vs Ridge half-width');

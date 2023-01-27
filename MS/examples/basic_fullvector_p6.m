@@ -32,7 +32,7 @@ for i = 1:10
     [x,y,xc,yc,nx,ny,eps,edges] = waveguidemesh([n1,n2(i),n3],[h1,h2,h3], ...
                                             rh,rw,side,dx,dy); 
 
-    [Hx,Hy,neff(i)] = wgmodes(lambda,n2(i),k,dx,dy,eps,'000A');
+    [Hx,Hy,neff(i)] = wgmodes(lambda,n2(i),nmodes,dx,dy,eps,'000A');
     
     fprintf(1,'neff = %.6f\n',neff(i));
     
@@ -51,7 +51,7 @@ for i = 1:10
     
 end
 
-figure(11);
+figure(12);
 plot(n2,neff);
 grid on;
 title('neff vs Ridge Index');
